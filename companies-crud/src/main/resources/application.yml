@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: companies-service
+  config:
+    import: optional:configserver:http://localhost:8761
+  datasource:
+    url: jdbc:postgresql://localhost:5432/companies
+    username: marte
+    password: croqueta
+    hikari:
+      maximum-pool-size: 5
+      connection-timeout: 2000
+
+server:
+  port: 0
+  servlet:
+    context-path: /companies-crud
+
+eureka:
+  instance:
+    instance-id: "${spring.application.name}:${random.value}"
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
