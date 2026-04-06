@@ -1,11 +1,11 @@
 spring:
   datasource:
-    url: ${spring.datasource.url}
+    url: ${db.url}
     hikari:
-      maximum-pool-size: ${spring.datasource.hikari.maximum-pool-size}
-      connection-timeout: ${spring.datasource.hikari.connection-timeout}
-    username: ${spring.datasource.username}
-    password: ${spring.datasource.password}
+      maximum-pool-size: ${db.maximum-pool-size}
+      connection-timeout: ${db.connection-timeout}
+    username: ${db.username}
+    password: ${db.password}
   application:
     name: companies-crud
   profiles:
